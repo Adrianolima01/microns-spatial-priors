@@ -1,6 +1,6 @@
 # How Much Neural Data Is Cortical Position Worth?
 
-### How much does a neuron's position help when its responses are scarce?
+### A MICrONS study of spatial information in few-shot neural prediction
 
 **Adriano Lima**
 
