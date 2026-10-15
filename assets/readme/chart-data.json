@@ -1,0 +1,39 @@
+{
+  "source": "results/spatial/curves.csv",
+  "policy_arm": "selected",
+  "budgets": [
+    1,
+    2,
+    4,
+    5
+  ],
+  "metric": "mean target Pearson r",
+  "curves": {
+    "D1": [
+      0.21200775710577086,
+      0.2542570333291422,
+      0.29578593614748666,
+      0.30709900381440003
+    ],
+    "D1_PAIR_CALIBRATED": [
+      0.22595505011554745,
+      0.2577021828290781,
+      0.29407483262916534,
+      0.30479535925550816
+    ],
+    "D1_DXY": [
+      0.2566681211851351,
+      0.2781477638619649,
+      0.3056406681370202,
+      0.3142901863374781
+    ]
+  },
+  "position_gain": [
+    0.03071307106958765,
+    0.020445581032886795,
+    0.011565835507854838,
+    0.009494827081969914
+  ],
+  "aggregation": "Equal means over calibration subsets, allocations, folds, movies, and scans after target averaging",
+  "refit_performed": false
+}

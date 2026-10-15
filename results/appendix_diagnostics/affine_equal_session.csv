@@ -1,0 +1,9 @@
+candidate,policy_arm,budget,within_movie_crossfit_mean_target_r2
+D1,selected,1,-0.0929689998992389
+D1,selected,2,-0.06871369122032109
+D1,selected,4,-0.04103907699313798
+D1,selected,5,-0.03306237470765444
+D1_SPATIAL,selected,1,-0.07168445462519726
+D1_SPATIAL,selected,2,-0.056653423427526294
+D1_SPATIAL,selected,4,-0.03640496425277957
+D1_SPATIAL,selected,5,-0.02993714103175732

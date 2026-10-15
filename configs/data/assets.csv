@@ -1,0 +1,11 @@
+scan,dandiset,asset_id,asset_path,size_bytes,download_url
+session_5_scan_6,000402,05d7fdce-7031-4ba1-81af-6d0b71a6b764,sub-17797/sub-17797_ses-5-scan-6_behavior+image+ophys.nwb,70745283897,https://api.dandiarchive.org/api/assets/05d7fdce-7031-4ba1-81af-6d0b71a6b764/download/
+session_5_scan_7,000402,fa86886e-8530-4328-82aa-635e7cdf32c6,sub-17797/sub-17797_ses-5-scan-7_behavior+image+ophys.nwb,70604510054,https://api.dandiarchive.org/api/assets/fa86886e-8530-4328-82aa-635e7cdf32c6/download/
+session_6_scan_2,000402,f064f088-6551-4ece-90a3-3d68dc68e8cb,sub-17797/sub-17797_ses-6-scan-2_behavior+image+ophys.nwb,71443723225,https://api.dandiarchive.org/api/assets/f064f088-6551-4ece-90a3-3d68dc68e8cb/download/
+session_6_scan_4,000402,dc68c26d-54de-433a-9310-ee95ae4daddd,sub-17797/sub-17797_ses-6-scan-4_behavior+image+ophys.nwb,70694222105,https://api.dandiarchive.org/api/assets/dc68c26d-54de-433a-9310-ee95ae4daddd/download/
+session_6_scan_6,000402,06c05eec-2d18-49f7-9cdf-103ca0bc5531,sub-17797/sub-17797_ses-6-scan-6_behavior+image+ophys.nwb,70665700079,https://api.dandiarchive.org/api/assets/06c05eec-2d18-49f7-9cdf-103ca0bc5531/download/
+session_6_scan_7,000402,c58f633b-ebc9-486d-a159-2877c5d8e095,sub-17797/sub-17797_ses-6-scan-7_behavior+image+ophys.nwb,70733916210,https://api.dandiarchive.org/api/assets/c58f633b-ebc9-486d-a159-2877c5d8e095/download/
+session_7_scan_3,000402,67384ebb-72c1-4fd5-8908-612eac6d6e6a,sub-17797/sub-17797_ses-7-scan-3_behavior+image+ophys.nwb,69760858411,https://api.dandiarchive.org/api/assets/67384ebb-72c1-4fd5-8908-612eac6d6e6a/download/
+session_7_scan_5,000402,841b41d4-165c-49ae-8793-5c549b913ca4,sub-17797/sub-17797_ses-7-scan-5_behavior+image+ophys.nwb,70081778078,https://api.dandiarchive.org/api/assets/841b41d4-165c-49ae-8793-5c549b913ca4/download/
+session_8_scan_5,000402,436f762f-924a-4a30-9a92-156532a03d21,sub-17797/sub-17797_ses-8-scan-5_behavior+image+ophys.nwb,70562111370,https://api.dandiarchive.org/api/assets/436f762f-924a-4a30-9a92-156532a03d21/download/
+session_9_scan_3,000402,d80d98cc-dbd3-4e2d-85c5-7ab055bfea71,sub-17797/sub-17797_ses-9-scan-3_behavior+image+ophys.nwb,67112724689,https://api.dandiarchive.org/api/assets/d80d98cc-dbd3-4e2d-85c5-7ab055bfea71/download/

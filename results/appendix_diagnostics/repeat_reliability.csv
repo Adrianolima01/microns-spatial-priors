@@ -1,0 +1,3 @@
+aggregation,metric,mean,n_constituent_scans,n_constituent_sessions,n_constituent_targets
+equal_session,raw_split_half_pearson,0.3464633350822277,10,5,6641
+equal_session,spearman_brown_reliability,0.4361206865313756,10,5,6641

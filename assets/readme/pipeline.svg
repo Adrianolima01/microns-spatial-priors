@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="810" viewBox="0 0 1400 810" role="img" aria-labelledby="title desc">
+<title id="title">Matched few-shot neural prediction pipeline</title>
+<desc id="desc">Target calibration and context training data support direct correlations, a shared map, and the map plus in-plane soma distance. A common covariance-decoding framework uses held-out-movie context activity to predict target activity. Target test responses enter only scoring.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#8796A7" stroke-width="1.5"/></marker></defs>
+<rect width="1400" height="810" rx="20" fill="#F6F8FB"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="56" y="58" fill="#5D7187" font-size="16" font-weight="700" letter-spacing="2.5">THE EXPERIMENT</text>
+<text x="56" y="104" fill="#192D42" font-size="32" font-weight="700">One prediction task. Three matched estimators.</text>
+<text x="56" y="138" fill="#506174" font-size="20">Measure the contribution of position beyond a learned correlation map.</text>
+<rect x="56" y="174" width="1288" height="130" rx="12" fill="#E8EEF6"/>
+<text x="82" y="208" fill="#506174" font-size="14" font-weight="700" letter-spacing="1.4">TRAINING INPUTS</text>
+<text x="82" y="244" fill="#192D42" font-size="23" font-weight="700">Limited target calibration</text>
+<text x="82" y="275" fill="#506174" font-size="19">1, 2, 4, or 5 repeats × four training movies</text>
+<line x1="696" y1="196" x2="696" y2="282" stroke="#C7D2DF"/>
+<text x="730" y="244" fill="#192D42" font-size="23" font-weight="700">Context-neuron responses</text>
+<text x="730" y="275" fill="#506174" font-size="19">Fit shared maps and context covariance</text>
+<path d="M700 304V326H258M700 326H1142" fill="none" stroke="#8796A7" stroke-width="2"/>
+<path d="M258 326V349" fill="none" stroke="#8796A7" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M700 326V349" fill="none" stroke="#8796A7" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1142 326V349" fill="none" stroke="#8796A7" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="56" y="360" width="404" height="164" rx="12" fill="#FFFFFF" stroke="#CED6E0"/>
+<rect x="498" y="360" width="404" height="164" rx="12" fill="#FFFFFF" stroke="#B6CDE8"/>
+<rect x="940" y="360" width="404" height="164" rx="12" fill="#FFF9F3" stroke="#D6B193"/>
+<text x="82" y="395" fill="#6B7280" font-size="14" font-weight="700" letter-spacing="1.4">01 / DIRECT</text>
+<text x="82" y="434" fill="#192D42" font-size="24" font-weight="700">Empirical correlations</text>
+<text x="82" y="470" fill="#506174" font-size="19">Target–context relationships</text>
+<text x="82" y="498" fill="#506174" font-size="19">from the calibration responses</text>
+<text x="524" y="395" fill="#306BB3" font-size="14" font-weight="700" letter-spacing="1.4">02 / MAPPED</text>
+<text x="524" y="434" fill="#192D42" font-size="24" font-weight="700">Shared correlation map</text>
+<text x="524" y="470" fill="#506174" font-size="19">Calibrate relationships using</text>
+<text x="524" y="498" fill="#506174" font-size="19">context–context training pairs</text>
+<text x="966" y="395" fill="#A74E1D" font-size="14" font-weight="700" letter-spacing="1.4">03 / MAPPED + POSITION</text>
+<text x="966" y="434" fill="#192D42" font-size="24" font-weight="700">Add in-plane distance</text>
+<text x="966" y="470" fill="#506174" font-size="19">The same map, augmented</text>
+<text x="966" y="498" fill="#506174" font-size="19">with released x/y soma separation</text>
+<path d="M258 524V550H700V577M1142 524V550H700M700 524V577" fill="none" stroke="#8796A7" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="56" y="588" width="1288" height="154" rx="12" fill="#192D42"/>
+<text x="82" y="625" fill="#B8C9DA" font-size="14" font-weight="700" letter-spacing="1.4">COMMON COVARIANCE-DECODING FRAMEWORK</text>
+<text x="82" y="668" fill="#FFFFFF" font-size="24" font-weight="700">Test-movie context activity</text>
+<path d="M433 661H473" fill="none" stroke="#B8C9DA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="490" y="668" fill="#FFFFFF" font-size="24" font-weight="700">Predicted target activity</text>
+<path d="M802 661H842" fill="none" stroke="#B8C9DA" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="860" y="668" fill="#FFFFFF" font-size="24" font-weight="700">Pearson r on held-out targets</text>
+<text x="82" y="711" fill="#B8C9DA" font-size="19">Target test responses enter only scoring. Position gain = arm 03 − arm 02.</text>
+<text x="56" y="781" fill="#63758A" font-size="17">Schematic of the included estimator and split design. No target test responses are used to fit or select models.</text>
+</g></svg>

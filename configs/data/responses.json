@@ -1,0 +1,122 @@
+[
+  {
+    "scan": "session_5_scan_6",
+    "shape": [
+      6,
+      10,
+      62,
+      836
+    ],
+    "dtype": "float32",
+    "sha256": "2d2818d97d1fc2de9ec0cd89befb73ac8eafcafbf5b5e342f19a26205d33b07b",
+    "bytes": 12439808
+  },
+  {
+    "scan": "session_5_scan_7",
+    "shape": [
+      6,
+      10,
+      62,
+      747
+    ],
+    "dtype": "float32",
+    "sha256": "7e5247742b2fcb129adead8f5ba85c0fe60ee15aa5be63ba57f02496ee38f9d8",
+    "bytes": 11115488
+  },
+  {
+    "scan": "session_6_scan_2",
+    "shape": [
+      6,
+      10,
+      62,
+      786
+    ],
+    "dtype": "float32",
+    "sha256": "22f1add732c365c5472182a140c3398d7ee0099855965b0a12364fd7b4378724",
+    "bytes": 11695808
+  },
+  {
+    "scan": "session_6_scan_4",
+    "shape": [
+      6,
+      10,
+      62,
+      891
+    ],
+    "dtype": "float32",
+    "sha256": "c038392f2fa5a05828ed0f9d0623c11655a8d056d5510d265fbd00a30ca0adea",
+    "bytes": 13258208
+  },
+  {
+    "scan": "session_6_scan_6",
+    "shape": [
+      6,
+      10,
+      62,
+      702
+    ],
+    "dtype": "float32",
+    "sha256": "08cd4c3b7b10b2a91d4dd52a7dfd87849ef588af7eed2f2dd8223a515c3d4a8b",
+    "bytes": 10445888
+  },
+  {
+    "scan": "session_6_scan_7",
+    "shape": [
+      6,
+      10,
+      62,
+      543
+    ],
+    "dtype": "float32",
+    "sha256": "09f31a9459537ca0d546bdfd35b82446145082b553aea85d156d5db400614354",
+    "bytes": 8079968
+  },
+  {
+    "scan": "session_7_scan_3",
+    "shape": [
+      6,
+      10,
+      62,
+      490
+    ],
+    "dtype": "float32",
+    "sha256": "12fd464ed8b26e17dc38a3144a537f8e6e003d5fd693168aa25de038c643aafc",
+    "bytes": 7291328
+  },
+  {
+    "scan": "session_7_scan_5",
+    "shape": [
+      6,
+      10,
+      62,
+      426
+    ],
+    "dtype": "float32",
+    "sha256": "fb5d7af6464b69a0f93a7561a4c9d631041cd89d8b1c48ae6fc4385d529cc722",
+    "bytes": 6339008
+  },
+  {
+    "scan": "session_8_scan_5",
+    "shape": [
+      6,
+      10,
+      62,
+      646
+    ],
+    "dtype": "float32",
+    "sha256": "6042d074132b2fd54efbf6109141121250fe8be6c7aa239791f3d8447ffbb4eb",
+    "bytes": 9612608
+  },
+  {
+    "scan": "session_9_scan_3",
+    "shape": [
+      6,
+      10,
+      85,
+      584
+    ],
+    "dtype": "float32",
+    "sha256": "edf153879609bf8caeb6cb613482bc226e5d295b18f5058970ab17f792d8d9be",
+    "bytes": 11913728
+  }
+]
