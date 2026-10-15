@@ -1,9 +1,10 @@
 cff-version: 1.2.0
-message: "Please cite the accompanying manuscript and the MICrONS data release."
-title: "Pricing Spatial Priors in Few-Shot Neural Prediction"
+message: "Please cite this software and the MICrONS data release."
+title: "How Much Neural Data Is Cortical Position Worth?"
 type: software
 authors:
-  - name: Anonymous authors
+  - family-names: Lima
+    given-names: Adriano
 version: 0.1.0
 license: MIT
 keywords:

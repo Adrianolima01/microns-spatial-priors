@@ -1,5 +1,8 @@
 # Supporting guide
 
+**How Much Neural Data Is Cortical Position Worth?**  
+Adriano Lima
+
 [← Project overview](../README.md)
 
 [Methods, data, and repository guide](#methods-data-and-repository-guide) · [Getting started](#getting-started) · [Results dictionary](#results-dictionary) · [Technical reference](#technical-reference) · [Controls and extended results](#controls-and-extended-results)
@@ -53,7 +56,7 @@ The recordings come from **MICrONS**, [DANDI dandiset 000402](https://dandiarchi
 ### Repository guide
 
 ```text
-pricing-spatial-priors/
+microns-spatial-priors/
 ├── README.md                    # Project overview, results, and repository map
 ├── assets/readme/               # Pipeline diagram and result figures
 ├── configs/
@@ -79,7 +82,7 @@ This page provides the entry commands. The [reproducibility specification](#repr
 
 ### 1. Regenerate tables and figures from the included scores
 
-The documented reproduction environment is **Python 3.10**. From the repository root:
+The documented reproduction environment is **Python 3.10**. A [fresh CI run](https://github.com/Adrianolima01/microns-spatial-priors/actions/runs/38661083835) installed the pinned requirements and passed all 26 numerical tests and retained-summary reproduction. From the repository root:
 
 ```bash
 python -m venv .venv
@@ -415,7 +418,7 @@ This is independent of the manuscript figure builder, `scripts/reproduce_paper.p
 | Primary learning curves | `results/spatial/curves.csv`; regenerated from `results/spatial/cells.csv.gz` by `reproduce_paper.py` |
 | Position gain positive in every scan/budget | `results/spatial/scan_curves.csv`; explicit check in `reproduce_paper.py` |
 | AULC | Normalized trapezoidal integral over log₂ budgets 1, 2, 4, 5; `reproduce_paper.py:aulc` |
-| Approximately 45% overstatement | At budget 1, `(mapped − direct) / (mapped + position − mapped) × 100 = 45.4115870671993%` |
+| Approximately 45% overstatement | At budget 1, `(mapped − direct) / (mapped + position − mapped) × 100 ≈ 45.412%` |
 | Equivalent-repeat displacements | Selected `D1_SHRUNK` curve in `results/profiles/curves.csv`; `reproduce_paper.py:inverse` and `tests/fixtures/expected_paper_values.json` |
 | Depth and same-field comparisons | Selected arms in `results/spatial/curves.csv` |
 | Fitted-location control | `results/location/contrasts.csv`, five-repeat descriptor at decoder budget 1 |
@@ -423,21 +426,22 @@ This is independent of the manuscript figure builder, `scripts/reproduce_paper.p
 
 #### Verification scope
 
-The retained-result reproduction command and all 26 included numerical tests have passed under Python 3.12 with available dependencies. The documented reproduction environment remains Python 3.10 with the pinned requirements. This check verifies retained-result aggregation and numerical invariants; it does not establish a fresh pinned-environment installation or a full-study prediction refit. Numeric precision is retained for calculation and rounded only for display.
+A [fresh GitHub Actions run](https://github.com/Adrianolima01/microns-spatial-priors/actions/runs/38661083835) under **Python 3.10** successfully installed the pinned requirements, installed the package, passed all 26 numerical tests, and ran `python scripts/reproduce_paper.py --check`. This verifies fresh-environment installation, retained-result aggregation, and the tested numerical invariants. It does not establish a full-study prediction refit from raw response data or complete supplementary refitting. Numeric precision is retained for calculation and rounded only for display.
 
 ### Citation metadata
 
-Current software metadata lists anonymous authors. Named authorship and a manuscript link or identifier have not yet been supplied. Please credit the accompanying research and the MICrONS data release when using this work.
+**Adriano Lima** is the sole author of this project. Please cite this software and the MICrONS data release when using this work. A manuscript link or identifier is not yet included in the software metadata.
 
 The machine-readable metadata is in [CITATION.cff](../CITATION.cff):
 
 ```yaml
 cff-version: 1.2.0
-message: "Please cite the accompanying manuscript and the MICrONS data release."
-title: "Pricing Spatial Priors in Few-Shot Neural Prediction"
+message: "Please cite this software and the MICrONS data release."
+title: "How Much Neural Data Is Cortical Position Worth?"
 type: software
 authors:
-  - name: Anonymous authors
+  - family-names: Lima
+    given-names: Adriano
 version: 0.1.0
 license: MIT
 keywords:
@@ -454,7 +458,7 @@ Project code is provided under the [MIT license](../LICENSE). Third-party data, 
 ```text
 MIT License
 
-Copyright (c) 2026 Anonymous contributors
+Copyright (c) 2026 Adriano Lima
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -479,30 +483,31 @@ SOFTWARE.
 
 ### Primary results
 
-![Two-panel figure. Left: mean target Pearson correlation at budgets 1, 2, 4, and 5 for direct correlations, a shared map, and the map with in-plane distance. Right: the incremental position gain decreases from 0.03071 at one repeat to 0.00949 at five repeats.](../assets/readme/main-results.png)
+![Two-panel figure. Left: mean target Pearson correlation at budgets 1, 2, 4, and 5 for direct correlations, a shared map, and the map with in-plane distance. Right: the incremental position gain decreases from 0.031 at one repeat to 0.009 at five repeats.](../assets/readme/main-results.png)
 
 *Selected-regularization results, with equal weighting across scans after the prescribed nested aggregation. Lines connect the four measured budgets on a log₂ axis. These are retained prediction scores; no new fits were run to create this presentation.*
 
 | Predictor | 1 repeat | 2 repeats | 4 repeats | 5 repeats | Log-budget AULC |
 |:--|--:|--:|--:|--:|--:|
-| Direct correlations | 0.21201 | 0.25426 | 0.29579 | 0.30710 | 0.26064 |
-| Shared correlation map | 0.22596 | 0.25770 | 0.29407 | 0.30480 | 0.26448 |
-| **Map + in-plane distance** | **0.25667** | **0.27815** | **0.30564** | **0.31429** | **0.28385** |
-| **Position gain beyond the map** | **+0.03071** | **+0.02045** | **+0.01157** | **+0.00949** | **+0.01937** |
+| Direct correlations | 0.212 | 0.254 | 0.296 | 0.307 | 0.261 |
+| Shared correlation map | 0.226 | 0.258 | 0.294 | 0.305 | 0.264 |
+| **Map + in-plane distance** | **0.257** | **0.278** | **0.306** | **0.314** | **0.284** |
+| **Position gain beyond the map** | **+0.031** | **+0.020** | **+0.012** | **+0.009** | **+0.019** |
 
-Scores are mean target Pearson *r*. AULC is the normalized trapezoidal area under the learning curve over log₂ budget. Full-precision sources: [spatial curves](../results/spatial/curves.csv), [retained score cells](../results/spatial/cells.csv.gz), and [aggregation definitions](#results-dictionary).
+Scores are mean target Pearson *r*, rounded to three decimals for display. AULC is the normalized trapezoidal area under the learning curve over log₂ budget. Full-precision sources: [spatial curves](../results/spatial/curves.csv), [retained score cells](../results/spatial/cells.csv.gz), and [aggregation definitions](#results-dictionary).
 
 #### What the comparison shows
 
 - **Position adds predictive value at every measured budget.** The map-plus-distance arm outperforms the map alone in all 10 scans at all four budgets. The aggregate increment is largest at one repeat and becomes smaller as target calibration increases.
-- **The baseline changes the interpretation.** At one repeat, the total improvement over direct correlations is +0.04466, comprising +0.01395 from the shared map and +0.03071 from position beyond that map. Attributing the entire improvement to position would overstate its isolated contribution by about 45%.
-- **Spatial gains can be expressed on a measured data scale.** Relative to the designated low-rank direct reference, the position increment corresponds to 0.825, 0.862, and 0.974 additional reference-equivalent repeats at budgets 1, 2, and 4. The five-repeat comparison is censored because it exceeds the measured reference range. These are reference-dependent score displacements, not estimates of experimental time saved.
+- **One repeat nearly matches two in this comparison.** Map + in-plane distance at one repeat reaches **0.257**, close to the shared map at two repeats (**0.258**).
+- **The baseline changes the interpretation.** At one repeat, the total improvement over direct correlations is +0.045, comprising +0.014 from the shared map and +0.031 from position beyond that map. Attributing the entire improvement to position would overstate its isolated contribution by about 45%.
+- **Spatial gains can be expressed on a measured data scale.** At one repeat, the shared-map and map-plus-distance scores correspond to 1.259 and 2.083 repeats on the designated low-rank direct reference curve. Their difference, calculated before rounding, is 0.825 reference-equivalent repeats. The corresponding position increments at budgets 2 and 4 are 0.862 and 0.974 repeats. The five-repeat comparison is censored because it exceeds the measured reference range. These are reference-dependent score displacements, not estimates of experimental time saved.
 
 #### Controls and interpretation
 
 Additional analyses test depth separation, 3D distance, same-field context, fitted-location descriptors, visual/activity profiles, cell-class annotations, and observed shared-input features.
 
-At one repeat, released depth-coordinate separation adds only **+0.00003** beyond the shared map, while the in-plane gain remains **+0.03108** when fitting and context are restricted to the same field. Adding the five-repeat fitted-location descriptor leaves an in-plane increment of **+0.03072**. These comparisons describe this study's coordinates, descriptors, and coverage; they do not establish a causal effect of cortical geometry.
+At one repeat, released depth-coordinate separation adds only **+0.00003** beyond the shared map, while the in-plane gain remains **+0.031** when fitting and context are restricted to the same field. Adding the five-repeat fitted-location descriptor leaves an in-plane increment of **+0.031**. These comparisons describe this study's coordinates, descriptors, and coverage; they do not establish a causal effect of cortical geometry.
 
 See the [result dictionary](#results-dictionary) for distinct anatomical cohorts, feature definitions, and supplementary diagnostics. Figure provenance and the exact headline calculations are recorded in [README figure notes](#figure-provenance).
 

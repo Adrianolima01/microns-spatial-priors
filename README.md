@@ -1,17 +1,19 @@
-# Pricing Spatial Priors in Few-Shot Neural Prediction
+# How Much Neural Data Is Cortical Position Worth?
 
 ### How much does a neuron's position help when its responses are scarce?
 
+**Adriano Lima**
+
 A MICrONS study of predicting a held-out neuron's activity from recorded context neurons. The central comparison separates the value of a **shared correlation map** from the additional value of **in-plane soma distance**, then expresses that spatial gain in prediction accuracy and reference-equivalent response repeats.
 
-[Overview](#overview) · [Results](#main-results) · [Methods](#methods-in-brief) · [Repository](#repository-structure) · [Controls](docs/guide.md#controls-and-extended-results) · [Reproduce](docs/guide.md#getting-started)
+[Overview](#overview) · [Results](#main-results) · [Methods](#methods-in-brief) · [Repository](#repository-structure) · [Controls](docs/guide.md#controls-and-extended-results) · [Reproduce](#quick-start)
 
 ![Matched few-shot prediction pipeline: limited target calibration and context data feed three correlation estimators, followed by covariance decoding and held-out target evaluation.](assets/readme/pipeline.svg)
 
 **6,641 recording identities · 10 scans · 5 sessions · 1 mouse**  
 **Target budgets: 1, 2, 4, or 5 repeats of each of four training movies**
 
-> At one repeat, adding in-plane distance raises mean target Pearson *r* from **0.22596 to 0.25667**, a **+0.03071** gain beyond the shared map.
+> At one repeat, adding in-plane distance raises mean target Pearson *r* from **0.226 to 0.257**, a **+0.031** gain beyond the shared map.
 
 ## Overview
 
@@ -29,18 +31,19 @@ All three use a common covariance-decoding framework and recorded context activi
 
 ![Prediction accuracy for the three primary estimators and the incremental position gain at budgets 1, 2, 4, and 5.](assets/readme/main-results.png)
 
-*Mean target Pearson r, with selected regularization and equal scan weighting after nested aggregation. Lines connect the four measured budgets on a log₂ axis.*
+*Mean target Pearson r, with selected regularization and equal scan weighting after nested aggregation. Lines connect the four measured budgets on a log₂ axis. Table values are rounded to three decimals; retained results keep full precision.*
 
 | Predictor | 1 repeat | 2 repeats | 4 repeats | 5 repeats |
 |:--|--:|--:|--:|--:|
-| Direct correlations | 0.21201 | 0.25426 | 0.29579 | 0.30710 |
-| Shared correlation map | 0.22596 | 0.25770 | 0.29407 | 0.30480 |
-| **Map + in-plane distance** | **0.25667** | **0.27815** | **0.30564** | **0.31429** |
-| **Position gain beyond the map** | **+0.03071** | **+0.02045** | **+0.01157** | **+0.00949** |
+| Direct correlations | 0.212 | 0.254 | 0.296 | 0.307 |
+| Shared correlation map | 0.226 | 0.258 | 0.294 | 0.305 |
+| **Map + in-plane distance** | **0.257** | **0.278** | **0.306** | **0.314** |
+| **Position gain beyond the map** | **+0.031** | **+0.020** | **+0.012** | **+0.009** |
 
 - **Position helps across the measured budgets.** The map-plus-distance arm outperforms the map alone in all 10 scans at all four budgets. The aggregate increment is largest when target responses are most limited.
-- **The baseline matters.** At one repeat, the shared map adds +0.01395 over direct correlations, and position adds a further +0.03071. Crediting both improvements to position would overstate its isolated contribution by about 45%.
-- **The gain has a reference-data interpretation.** At one repeat, the position increment corresponds to approximately **0.825 additional reference-equivalent repeats** on the measured low-rank direct curve. This quantity depends on the reference; it is not a recording-time estimate.
+- **One repeat nearly matches two in this comparison.** Map + in-plane distance at one repeat reaches **0.257**, close to the shared map at two repeats (**0.258**).
+- **The baseline matters.** At one repeat, the shared map adds +0.014 over direct correlations, and position adds a further +0.031. Crediting both improvements to position would overstate its isolated contribution by about 45%.
+- **The gain has a reference-data interpretation.** At one repeat, the shared-map and map-plus-distance scores correspond to **1.259** and **2.083** repeats on the measured low-rank direct reference curve. Their difference, calculated before rounding, is approximately **0.825 additional reference-equivalent repeats**. This quantity depends on the reference; it is not a recording-time estimate.
 
 [Controls, complete numerical summaries, and interpretation →](docs/guide.md#controls-and-extended-results)
 
@@ -54,10 +57,26 @@ The final prediction combines estimated target–context relationships with obse
 
 These results describe **conditional few-shot prediction in one mouse**. The scans and recording identities are repeated measurements, not independent biological replicates. Prediction requires both target calibration responses and held-out-movie context responses. The observed spatial gain is predictive evidence within this design; it does not establish a causal effect of cortical geometry.
 
+## Quick start
+
+With Python 3.10 installed, reproduce the tables and figures from the retained scores:
+
+```bash
+git clone https://github.com/Adrianolima01/microns-spatial-priors.git
+cd microns-spatial-priors
+python3.10 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m pip install --no-deps -e .
+python scripts/reproduce_paper.py --check
+```
+
+Outputs are written to `outputs/paper/`. This route needs no external neural data and does not refit the predictors. See [Getting started](docs/guide.md#getting-started) for tests, Windows activation, and primary-refit requirements.
+
 ## Repository structure
 
 ```text
-pricing-spatial-priors/
+microns-spatial-priors/
 ├── README.md                    # Project overview, results, and repository map
 ├── assets/readme/               # Pipeline diagram and result figures
 ├── configs/
@@ -91,4 +110,4 @@ The repository includes retained scores and scripts for regenerating the compute
 
 ## Citation and license
 
-Software citation details are in [CITATION.cff](CITATION.cff). Please credit the accompanying research and the MICrONS data release when using this work. Code is [MIT-licensed](LICENSE); third-party assets retain their own terms.
+This project is authored by **Adriano Lima**. Software citation details are in [CITATION.cff](CITATION.cff). Please cite this software and the MICrONS data release when using this work. Code is [MIT-licensed](LICENSE); third-party assets retain their own terms.
